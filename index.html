@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="css/main.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Title Slide-->
+				<section>
+					<h2 class="slide-title">Creating a Voice</h2>
+					<h4>A Comparison of Alexa and Google Actions</h4>
+					<p>Shannon Beach</p>
+				</section>
+				<section><!-- aobut me-->
+					<h2 class="slide-title">About Me</h2>
+					<ul>
+						<li>Software Engineer</li>
+						<li>Code Louisville Mentor<br><span><a href='https://codelouisville.org/'>codelouisville.org</a></span></li>
+						<li>Code.org Voluneteer<br><span><a href='https://code.org/'>code.org</a></span></li>
+					</ul>
+				</section><!--about me -->
+				<section><!-- why voice-->
+					<h2 class="slide-title">Why Voice</h2>
+					<div class="slideshow-container">
+						<div class="mySlides fade"> <!-- slide 1 -->
+							<img src="img/question_mark.jpeg">			
+						</div>
+						<div class="mySlides fade"> <!-- slide 2 -->
+							<p class="carousel-slide-title">Voice Assistants make life easier</p>
+			
+						</div>
+						<div class="mySlides fade"> <!-- slide 3 -->
+							<p>Increase Accessibility</p>
+							<ul> 
+								<li class="slideshow-list">Turn lights on/off</li>
+								<li class="slideshow-list">Turn appliances on/off</li>
+								<li class="slideshow-list">Check appliance status</li>
+							</ul>
+						</div>
+						<div class="mySlides fade"> <!-- slide 4 -->
+							<p>Reduce Parental Stress</p>
+							<ul>
+								<li class="slideshow-list">Set mornin/night routines</li>
+								<li class="slideshow-list">Add things to shopping lists</li>
+								<li class="slideshow-list">Have shopping list on your phone</li>
+								<li class="slideshow-list">Set timers for devices</li>
+							</ul>
+						</div>
+						<div class="mySlides fade"> <!-- slide 4 -->
+							<p>It's a new challenge!</p>
+							<ul>
+								<li class="slideshow-list">I'm a visual person</li>
+								<li class="slideshow-list">No screens</li>
+							</ul>
+						</div>					
+						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>		
+					</div> <!-- slide show container -->
+					<br>
+					
+					<div style="text-align:center">
+						<span class="dot" onclick="currentSlide(1)"></span> 
+						<span class="dot" onclick="currentSlide(2)"></span> 
+						<span class="dot" onclick="currentSlide(3)"></span> 
+						<span class="dot" onclick="currentSlide(4)"></span>
+						<span class="dot" onclick="currentSlide(5)"></span>  
+					</div>
+
+				</section><!--why voice -->
+				<section>
+					<h2 class="slide-title">Things to Remember</h2>
+					<o>Skills/Actions are app</o>
+					<p>Voice first approach</p>
+					<p>Keep responses short and simple</p>
+					<p>Consider storing information about your users<br>
+					allergies, food preferences, location</p>
+				</section>
+				<section>
+					<section>
+						<h2 class="slide-title">Skills vs Actions</h2>
+						<h3 class="slide-title">What's the same, what's different</h3>
+						<p>Skills & Actions are more similar than different</p>
+						<p>Same parts, different names</p>
+						<p>Built on JSON request/responses</p>
+					</section>
+					<section>
+						<h2 class="slide-title">The Parts</h2>
+						<button class="collapsible">Voice User Interface / Front End:</button>
+						<div class="content">
+								<p class="content-header">Define the Voice Model</p>
+								<ul>
+									<li class="collapsible-list">Invocation Name</li>
+									<li class="collapsible-list">Intents</li>
+									<li class="collapsible-list">Slots/Entities</li>
+									<li class="collapsible-list">Sample Utterances</li>
+									<li class="collapsible-list">Web Service Endpoint</li>
+								</ul>
+								<p class="collapsible-content">Developer Consoles<br>
+								<b>Alexa:</b> https://developer.amazon.com/alexa/console/ask<br>
+								<b>Google Actions:</b> https://console.actions.google.com/<br>
+								https://console.dialogflow.com/api-client</p>
+						</div>
+						<button class="collapsible">Hosted Cloud Service / Back End</button>
+						<div class="content">
+							<p class="content-header">Web Service Endpoint</p>
+							<p class="collapsible-content">AKA -- Cloud Functions</p>
+							<p class="collapsible-content">
+									<b>Google Actions:</b> Cloud Functions for Firebase<br>
+								Your web service will receive a POST request from Dialogflow in the form of the response to a user query matched by intents with webhook enabled.</p>
+							<p class="collapsible-content">
+								<b>Alexa:</b> Lamda Function in AWS <br>
+								The Endpoint will receive POST requests when a user interacts with your Alexa Skill. The request body contains parameters that your service can use to perform logic and generate a JSON-formatted response. </p>
+						</div>
+						<button class="collapsible">Invocation Name</button>
+						<div class="content">
+							<p class="content-header">The name of your skill/action</p>
+							<p class="collapsible-content italic-text">"Alexa, talk to <b>Best Friend"</b></"Alexa,></p>
+							<p class="collapsible-content italic-text">"Hey Google, talk to <b>Best Friend</b>"</"Hey></p>
+						</div>
+						<button class="collapsible">Sample Utterances</button>
+						<div class="content">
+							<p class="content-header">Phrases your skill/action understands</p>
+							<p class="collapsible-content italic-text">I had a bad day</p>
+							<p class="collapsible-content italic-text">I'm nervous about my presentation</p>
+							<p class="collapsible-content italic-text">Today sucked</p>
+						</div>
+					</section><!-- the parts slide 1-->
+					<section>
+						<h2 class="slide-title">The Parts</h2>
+						<button class="collapsible">Intents</button>
+							<div class="content">
+								<p class="content-header">Functions that match to sample utterances</p>
+								<p class="collapsible-content italic-text">WelcomeIntent</p>
+								<p class="collapsible-content italic-text">ExitIntent</p>
+								<p class="collapsible-content italic-text">HelpIntent</p>
+								<p class="collapsible-content italic-text">TodaysWeatherIntent</p>
+							</div>
+						<button class="collapsible">Custom Slots/Entities</button>
+							<div class="content">
+								<p class="content-header">Extra Information From the User</p>
+								<p class="collapsible-content">Google calls these entities</p>
+								<p class="collapsible-content">Amazon calls these slots</p>
+								<p class="collapsible-content">Slots/Entities are used like variables in user utterances</p>
+								<p class="collapsible-content">Examples:</p>
+								<ul>
+									<li class="collapsible-list">feelings</li>
+									<li class="collapsible-list">foods</li>
+									<li class="collapsible-list">allergies</li>
+								</ul>
+							</div>
+						<button class="collapsible">SSML</button>
+							<div class="content">
+								<p class="content-header">Speech Synthesis Markup Language (SSML):</p>
+								<p class="collapsible-content"> A markup language that provides a standard way to mark up text for the generation of synthetic speech. </p>
+								<p class="collapsible-content">You can use SSML when you need additional control over how the Assistant generates the speech from the text in your response.</p>
+								<p class="collapsible-content"> Can be used to embed sounds in your skill/action</p>
+								<pre><code>
+<speak>
+	You will do great thngs today.
+	<audio src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+</speak>
+								</code></pre>
+							</div>
+					</section><!-- the parts slide 2-->
+				</section>
+				<section>
+					<h2 class="slide-title">Code Compairison</h2>
+					<section>
+						<pre><code class="code-sample">
+ npm install --save ask-sdk							
+						</code></pre>
+						<p class="small-text">Set up for Alexa</p>
+						<pre><code class="code-sample"> 
+ npm -g install firebase-tools //install firebase
+ firebase init functions							
+						</code></pre>
+						<p class="small-text">Set up for Google</p>
+					</section>
+					<section>
+						<img src="img/file_tree.png"/ class="image_compare">
+					</section>
+					<section>
+						<pre><code class="code-sample">
+//Google Action Complement Intent							
+app.intent('compliment', (conv, {feeling}) => {
+	// Respond with empathy and a compliment to brighten the users day
+	conv.close(randomResponseForCompliment);
+});							
+					</code></pre>
+					<pre><code>
+'GetCompliment': function () {
+	// Get a compliment from the compliment list
+	// Use this.t() to get corresponding language data
+	var ComplimentArr = this.t('COMPLIMENTS');
+	var ComplimentIndex = Math.floor(Math.random() * ComplimentArr.length);
+	var randomCompliment = ComplimentArr[ComplimentIndex];
+
+	// Create speech output
+	// var speechOutput = this.t("GET_COMPLIMENT_MESSAGE") + randomCompliment;
+	var speechOutput = randomCompliment;
+	this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomCompliment)
+},
+					</code></pre>
+					</section>
+					<section>
+						<pre><code class="code-sample">
+ this.emit(':ask', speechOutput, reprompt);	//using speachOut variable
+ this.emit(':ask', "I did not understand. Please try again");						
+						</code></pre>
+						<p class="small-text">Alexa- microphone open</p>						
+						<pre><code class="code-sample">
+ conv.ask(randomResponseForProject + 'Would you like me to cheer you on?');
+ conv.ask(new Suggestions('Yes', 'No'));						
+						</code></pre>
+						<p class="small-text">Google microphone open</p>
+					</section>
+					<section>
+						<pre><code class="code-sample">
+ this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomCompliment)
+						</code></pre>
+						<p class="small-text">Alexa close microphone</p>
+						<pre><code class="code-sample">
+ conv.close(`I am sorry you had a ${dayDescription} day, ${conv.data.userName}.` + randomResponseForBadDay);
+						</code></pre>
+						<p class="small-text">Google close microphone</p>
+					</section>
+				</section>
+				<!--End Slide-->
+				<section>
+					<h2>Contact Info</h2>
+					<p>LinkedIn: <a href="https://www.linkedin.com/in/shannonbeach"/>linkedin.com/in/shannonbeach</a></p>
+					<p>Twitter: <a href="https://twitter.com/theshannonbeach">&#64;theshannonbeach</a></p>
+					<p>Louisville Tech Slack: @shannon</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="js/main.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+		<script>
+				var coll = document.getElementsByClassName("collapsible");
+				var i;
+				
+				for (i = 0; i < coll.length; i++) {
+				  coll[i].addEventListener("click", function() {
+					this.classList.toggle("active");
+					var content = this.nextElementSibling;
+					if (content.style.display === "block") {
+					  content.style.display = "none";
+					} else {
+					  content.style.display = "block";
+					}
+				  });
+				}
+				</script>
+	</body>
+</html>
