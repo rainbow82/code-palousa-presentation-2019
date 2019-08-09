@@ -215,3 +215,10 @@ img {vertical-align: middle;}
     max-height: 600px!important;
     margin-top: 80px!important;
 }
+
+.side-by-side{
+    border: 2px solid pink;
+    width: 50%;
+    height: 200px;
+    float: left;
+}
