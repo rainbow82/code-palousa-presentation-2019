@@ -36,9 +36,9 @@
 				<section><!-- aobut me-->
 					<h2 class="slide-title">About Me</h2>
 					<ul>
-						<li>Software Engineer</li>
-						<li>Code Louisville Mentor<br><span><a href='https://codelouisville.org/'>codelouisville.org</a></span></li>
-						<li>Code.org Voluneteer<br><span><a href='https://code.org/'>code.org</a></span></li>
+						<li class="about">Software Engineer</li>
+						<li class="about">Code Louisville Mentor<br><span><a href='https://codelouisville.org/'>codelouisville.org</a></span></li>
+						<li class="about">Code.org Voluneteer<br><span><a href='https://code.org/'>code.org</a></span></li>
 					</ul>
 				</section><!--about me -->
 				<section><!-- why voice-->
@@ -103,33 +103,10 @@
 							<p>Write out your voice model</p>
 							<p>Rehearse it out loud</p>
 							<p>Revise it</p>
-					</section> 
-					<section>
-						<p>Skill/Action Creation</p>
-						<div>
-							<div class="side-by-side">
-									<p>Alexa</p>
-									<ul>
-										<li>Lamba Function</li>
-										<li>Create your skill</li>
-										<li>Set up first intent</li>
-									</ul>
-							</div>
-							<div class="side-by-side">
-									<p>Google</p>
-									<ul>
-										<li>Lamba Function</li>
-										<li>Create your skill</li>
-										<li>Set up first intent</li>
-									</ul>
-							</div>
-						</div>
-					</section>
-	
+							<p>Voice Model creation</p>
+							<p>Write your code</p>
+					</section> 	
 				</section><!--  end things to remember -->
-				<section>
-						<h2 class="slide-title">Pricing</h2>
-				</section>
 				<section>
 					<section>
 						<h2 class="slide-title">Skills vs Actions</h2>
@@ -235,13 +212,6 @@
 						<img src="img/file_tree.png"/ class="image_compare">
 					</section>
 					<section>
-						<pre><code class="code-sample">
-//Google Action Complement Intent							
-app.intent('compliment', (conv, {feeling}) => {
-	// Respond with empathy and a compliment to brighten the users day
-	conv.close(randomResponseForCompliment);
-});							
-					</code></pre>
 					<pre><code>
 'GetCompliment': function () {
 	// Get a compliment from the compliment list
@@ -256,6 +226,25 @@ app.intent('compliment', (conv, {feeling}) => {
 	this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomCompliment)
 },
 					</code></pre>
+					<p class="small-text">Intent- Alexa</p>
+					</section>
+					<section>
+						<pre><code class="code-sample">
+//Google Action Complement Intent							
+app.intent('compliment', (conv, {feeling}) => {
+	// Respond with empathy and a compliment to brighten the users day
+	conv.close(randomResponseForCompliment);
+});							
+						</code></pre>
+						<pre><code>
+const responsesForCompliment = [
+'You look great today!',
+'You have cute elbows. For reals!',
+'Is that your picture next to charming in the dictionary?',
+var complimentResponseIndex = Math.floor(Math.random() * responsesForCompliment.length);
+var randomResponseForCompliment = responsesForCompliment[complimentResponseIndex];
+						</code></pre>
+						<p class="small-text">Intent- Google Action</p>
 					</section>
 					<section>
 						<pre><code class="code-sample">
@@ -278,6 +267,25 @@ app.intent('compliment', (conv, {feeling}) => {
  conv.close(`I am sorry you had a ${dayDescription} day, ${conv.data.userName}.` + randomResponseForBadDay);
 						</code></pre>
 						<p class="small-text">Google close microphone</p>
+					</section>
+				</section>
+				<section>
+					<h2 class="slide-title">What's this going to cost me?</h2>
+					<section>
+						<img class="pricing" src="img/lambda_price.png">
+						<p class="small-text">Lambda Functions</p>
+					</section>
+					<section>
+						<img class="pricing_google_cloud" src="img/cloud_function_pricing.png">
+						<img class="pricing_google_cloud2" src="img/cloud_function_pricing2.png">
+						<p class="small-text">Google Cloud Functions</p>
+					</section>
+					<section>
+						<h3 class="subtitle">Other Costs</h3>
+						<ul>
+							<li class="subtitle_list">S3 Bucket data transfers</li>
+							<li class="subtitle_list">Database usage</li>
+						</ul>
 					</section>
 				</section>
 				<!--End Slide-->
