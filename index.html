@@ -32,6 +32,7 @@
 					<h2 class="slide-title">Creating a Voice</h2>
 					<h4>A Comparison of Alexa and Google Actions</h4>
 					<p>Shannon Beach</p>
+					<p>Code Palousa 2019</p>
 				</section>
 				<section><!-- aobut me-->
 					<h2 class="slide-title">About Me</h2>
@@ -45,15 +46,15 @@
 					<h2 class="slide-title">Why Voice</h2>
 					<div class="slideshow-container">
 						<div class="mySlides fade"> <!-- slide 1 -->
-							<img src="img/question_mark.jpeg">			
+							<img src="img/question_mark.jpeg">
 						</div>
 						<div class="mySlides fade"> <!-- slide 2 -->
 							<p class="carousel-slide-title">Voice Assistants make life easier</p>
-			
+
 						</div>
 						<div class="mySlides fade"> <!-- slide 3 -->
 							<p>Increase Accessibility</p>
-							<ul> 
+							<ul>
 								<li class="slideshow-list">Turn lights on/off</li>
 								<li class="slideshow-list">Turn appliances on/off</li>
 								<li class="slideshow-list">Check appliance status</li>
@@ -74,18 +75,18 @@
 								<li class="slideshow-list">I'm a visual person</li>
 								<li class="slideshow-list">No screens</li>
 							</ul>
-						</div>					
+						</div>
 						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-						<a class="next" onclick="plusSlides(1)">&#10095;</a>		
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>
 					</div> <!-- slide show container -->
 					<br>
-					
+
 					<div style="text-align:center">
-						<span class="dot" onclick="currentSlide(1)"></span> 
-						<span class="dot" onclick="currentSlide(2)"></span> 
-						<span class="dot" onclick="currentSlide(3)"></span> 
+						<span class="dot" onclick="currentSlide(1)"></span>
+						<span class="dot" onclick="currentSlide(2)"></span>
+						<span class="dot" onclick="currentSlide(3)"></span>
 						<span class="dot" onclick="currentSlide(4)"></span>
-						<span class="dot" onclick="currentSlide(5)"></span>  
+						<span class="dot" onclick="currentSlide(5)"></span>
 					</div>
 
 				</section><!--why voice -->
@@ -189,12 +190,12 @@
 					<h2 class="slide-title">Code Compairison</h2>
 					<section>
 						<pre><code class="code-sample">
- npm install --save ask-sdk							
+ npm install --save ask-sdk
 						</code></pre>
 						<p class="small-text">Set up for Alexa</p>
-						<pre><code class="code-sample"> 
+						<pre><code class="code-sample">
  npm -g install firebase-tools //install firebase
- firebase init functions							
+ firebase init functions
 						</code></pre>
 						<p class="small-text">Set up for Google</p>
 					</section>
@@ -203,11 +204,11 @@
 					</section>
 					<section>
 						<pre><code class="code-sample">
-//Google Action Complement Intent							
+//Google Action Complement Intent
 app.intent('compliment', (conv, {feeling}) => {
 	// Respond with empathy and a compliment to brighten the users day
 	conv.close(randomResponseForCompliment);
-});							
+});
 					</code></pre>
 					<pre><code>
 'GetCompliment': function () {
@@ -227,12 +228,12 @@ app.intent('compliment', (conv, {feeling}) => {
 					<section>
 						<pre><code class="code-sample">
  this.emit(':ask', speechOutput, reprompt);	//using speachOut variable
- this.emit(':ask', "I did not understand. Please try again");						
+ this.emit(':ask', "I did not understand. Please try again");
 						</code></pre>
-						<p class="small-text">Alexa- microphone open</p>						
+						<p class="small-text">Alexa- microphone open</p>
 						<pre><code class="code-sample">
  conv.ask(randomResponseForProject + 'Would you like me to cheer you on?');
- conv.ask(new Suggestions('Yes', 'No'));						
+ conv.ask(new Suggestions('Yes', 'No'));
 						</code></pre>
 						<p class="small-text">Google microphone open</p>
 					</section>
@@ -276,7 +277,7 @@ app.intent('compliment', (conv, {feeling}) => {
 		<script>
 				var coll = document.getElementsByClassName("collapsible");
 				var i;
-				
+
 				for (i = 0; i < coll.length; i++) {
 				  coll[i].addEventListener("click", function() {
 					this.classList.toggle("active");
