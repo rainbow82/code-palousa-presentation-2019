@@ -4,7 +4,12 @@
 }
 
 .subtitle{
-    margin-top: 75px!important;
+    margin-top: 105px!important;
+    margin-left: -500px!important;
+}
+.subtitle_list{
+    margin-left: 150px!important; 
+    text-align: left; 
 }
 section{
     top: 0!important;
@@ -21,6 +26,22 @@ a{
     color: #0cb1f5!important;
 }
 
+.about{
+    margin-bottom: 55px;
+}
+.pricing{
+    margin-top: 155px!important;
+}
+.pricing_google_cloud{
+    margin-top: -10px!important;
+}
+.pricing_google_cloud2{
+    margin-top: -10px!important;
+    max-height: 25%!important;
+}
+.hidden{
+    display: none!important;
+}
 /* Carousel */
 
 * {box-sizing: border-box}
@@ -214,4 +235,11 @@ img {vertical-align: middle;}
 .image_compare{
     max-height: 600px!important;
     margin-top: 80px!important;
+}
+
+.side-by-side{
+    border: 2px solid pink;
+    width: 50%;
+    height: 200px;
+    float: left;
 }
